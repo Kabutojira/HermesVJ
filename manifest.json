@@ -21,15 +21,6 @@
       "prompt": "rainy autumn twilight with lantern reflections, drifting leaves, and a calm amber glow"
     },
     {
-      "id": "2026-05-10-122128-velvet-hearth-embrace",
-      "title": "Velvet Hearth Embrace",
-      "engine": "p5",
-      "path": "sketches/2026-05-10-122128-velvet-hearth-embrace/sketch.js",
-      "metadata": "sketches/2026-05-10-122128-velvet-hearth-embrace/sketch.json",
-      "created_at": "2026-05-10T12:21:28Z",
-      "prompt": "sensual candlelit velvet embrace with ember glow, intimate warmth, softened crimson shadows, and slow luxurious motion"
-    },
-    {
       "id": "2026-05-10-111307-green-sunburst-garden",
       "title": "Green Sunburst Garden",
       "engine": "p5",
@@ -37,6 +28,15 @@
       "metadata": "sketches/2026-05-10-111307-green-sunburst-garden/sketch.json",
       "created_at": "2026-05-10T11:13:07Z",
       "prompt": "joyful green sunrise garden with glowing rings, floating leaves, and sparkling motion"
+    },
+    {
+      "id": "2026-05-10-122128-velvet-hearth-embrace",
+      "title": "Velvet Hearth Embrace",
+      "engine": "p5",
+      "path": "sketches/2026-05-10-122128-velvet-hearth-embrace/sketch.js",
+      "metadata": "sketches/2026-05-10-122128-velvet-hearth-embrace/sketch.json",
+      "created_at": "2026-05-10T12:21:28Z",
+      "prompt": "sensual candlelit velvet embrace with ember glow, intimate warmth, softened crimson shadows, and slow luxurious motion"
     }
   ]
 }
