@@ -1,5 +1,7 @@
 # HermesVJ
 
+https://kabutojira.github.io/HermesVJ/
+
 HermesVJ is a static GitHub Pages + PWA visual display system for agent-generated live visuals.
 
 The repository is the source of truth:
