@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "latest": "2026-05-10-110505-autumn-rain-lanterns",
+  "latest": "2026-05-10-111307-green-sunburst-garden",
   "sketches": [
     {
       "id": "2026-05-10-120000-neon-orbits",
@@ -19,6 +19,15 @@
       "metadata": "sketches/2026-05-10-110505-autumn-rain-lanterns/sketch.json",
       "created_at": "2026-05-10T11:05:05Z",
       "prompt": "rainy autumn twilight with lantern reflections, drifting leaves, and a calm amber glow"
+    },
+    {
+      "id": "2026-05-10-111307-green-sunburst-garden",
+      "title": "Green Sunburst Garden",
+      "engine": "p5",
+      "path": "sketches/2026-05-10-111307-green-sunburst-garden/sketch.js",
+      "metadata": "sketches/2026-05-10-111307-green-sunburst-garden/sketch.json",
+      "created_at": "2026-05-10T11:13:07Z",
+      "prompt": "joyful green sunrise garden with glowing rings, floating leaves, and sparkling motion"
     }
   ]
 }
