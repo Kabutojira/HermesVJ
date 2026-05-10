@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "latest": "2026-05-10-143403-black-hole-nebula-pulse",
+  "latest": "2026-05-10-154118-event-horizon-bloom",
   "sketches": [
     {
       "id": "2026-05-10-120000-neon-orbits",
@@ -64,6 +64,15 @@
       "metadata": "sketches/2026-05-10-143403-black-hole-nebula-pulse/sketch.json",
       "created_at": "2026-05-10T14:34:03Z",
       "prompt": "space vortex with black hole gravity well, starlit galaxy dust, violet-cyan nebula bloom, and 126 BPM orbital pulse energy"
+    },
+    {
+      "id": "2026-05-10-154118-event-horizon-bloom",
+      "title": "Event Horizon Bloom",
+      "engine": "p5",
+      "path": "sketches/2026-05-10-154118-event-horizon-bloom/sketch.js",
+      "metadata": "sketches/2026-05-10-154118-event-horizon-bloom/sketch.json",
+      "created_at": "2026-05-10T15:41:18Z",
+      "prompt": "cinematic black hole with glowing accretion ring, violet-blue nebula bloom, warped starfield, and slow gravitational pull"
     }
   ]
 }
