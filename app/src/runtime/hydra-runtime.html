@@ -32,6 +32,8 @@
       const status = document.getElementById('status');
       const canvas = document.getElementById('hydra-canvas');
       const sketchUrl = __SKETCH_URL__;
+      const runtimeConfig = __HERMES_VJ_RUNTIME__;
+      window.__HERMES_VJ_RUNTIME = runtimeConfig;
       let hydra;
 
       function showError(message) {
