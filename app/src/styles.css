@@ -1,0 +1,275 @@
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #050816;
+  color: #f5f7ff;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 24px;
+  background:
+    radial-gradient(circle at top, rgba(54, 84, 255, 0.22), transparent 28%),
+    linear-gradient(180deg, #090d1d 0%, #050816 100%);
+}
+
+.topbar,
+.controls-card,
+.gallery-panel,
+.viewer-card {
+  background: rgba(13, 18, 36, 0.88);
+  border: 1px solid rgba(122, 140, 255, 0.18);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(16px);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px;
+  border-radius: 20px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #8ea2ff;
+  font-size: 0.72rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.subtitle,
+.prompt-line,
+.gallery-card-prompt,
+.gallery-card-meta {
+  color: #b9c3f6;
+}
+
+.topbar-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.gallery-panel,
+.controls-card,
+.viewer-card {
+  border-radius: 20px;
+}
+
+.gallery-panel {
+  padding: 20px;
+  min-height: 70vh;
+}
+
+.gallery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.gallery-header h2 {
+  margin: 0;
+}
+
+.gallery-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: calc(100vh - 220px);
+  overflow: auto;
+}
+
+.gallery-card {
+  width: 100%;
+  text-align: left;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(130, 146, 255, 0.16);
+  background: rgba(11, 15, 30, 0.96);
+  color: inherit;
+  cursor: pointer;
+}
+
+.gallery-card.active {
+  border-color: rgba(133, 225, 255, 0.9);
+  box-shadow: inset 0 0 0 1px rgba(133, 225, 255, 0.28);
+}
+
+.gallery-card-top,
+.controls-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gallery-card-top {
+  justify-content: space-between;
+}
+
+.gallery-card-prompt {
+  margin-top: 10px;
+  line-height: 1.45;
+}
+
+.viewer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.controls-card {
+  padding: 18px;
+}
+
+.controls-row {
+  flex-wrap: wrap;
+}
+
+.controls-row + .controls-row {
+  margin-top: 12px;
+}
+
+.controls-row-wrap {
+  color: #d5dbff;
+}
+
+.primary-button,
+.secondary-button {
+  border-radius: 999px;
+  border: 1px solid rgba(132, 148, 255, 0.3);
+  padding: 10px 14px;
+  cursor: pointer;
+  color: inherit;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, #4668ff, #9b61ff);
+}
+
+.secondary-button {
+  background: rgba(20, 27, 53, 0.92);
+}
+
+.engine-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+}
+
+.engine-p5 {
+  background: rgba(64, 222, 255, 0.18);
+  color: #8ae9ff;
+}
+
+.engine-hydra {
+  background: rgba(206, 126, 255, 0.18);
+  color: #edb1ff;
+}
+
+.prompt-line {
+  margin: 12px 0 0;
+}
+
+.viewer-card {
+  min-height: 72vh;
+  padding: 12px;
+}
+
+.player-shell {
+  position: relative;
+  min-height: calc(72vh - 24px);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+}
+
+.player-frame {
+  width: 100%;
+  min-height: calc(72vh - 24px);
+  border: 0;
+  display: block;
+}
+
+.player-error,
+.player-empty {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(122, 28, 52, 0.88);
+  color: #fff1f3;
+}
+
+.player-empty {
+  top: 16px;
+  bottom: auto;
+  background: rgba(24, 33, 69, 0.9);
+}
+
+@media (max-width: 980px) {
+  .app-shell {
+    padding: 16px;
+  }
+
+  .topbar,
+  .layout {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .topbar-status {
+    align-items: flex-start;
+  }
+
+  .gallery-list {
+    max-height: none;
+  }
+
+  .viewer-card,
+  .player-shell,
+  .player-frame {
+    min-height: 56vh;
+  }
+}

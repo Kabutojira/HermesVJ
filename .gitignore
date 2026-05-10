@@ -1,0 +1,12 @@
+node_modules/
+dist/
+*.tsbuildinfo
+*.log
+app/node_modules/
+app/dist/
+app/src/**/*.js
+app/src/**/*.d.ts
+app/tests/**/*.js
+app/tests/**/*.d.ts
+app/vite.config.js
+app/vite.config.d.ts

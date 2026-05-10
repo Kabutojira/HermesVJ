@@ -1,0 +1,15 @@
+{
+  "name": "HermesVJ",
+  "short_name": "HermesVJ",
+  "display": "standalone",
+  "background_color": "#050816",
+  "theme_color": "#050816",
+  "start_url": "./",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

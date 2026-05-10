@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HermesVJ Hydra runtime</title>
+    <style>
+      html, body, canvas {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #000;
+      }
+      #status {
+        position: fixed;
+        inset: 16px auto auto 16px;
+        z-index: 10;
+        padding: 10px 12px;
+        border-radius: 10px;
+        background: rgba(13, 17, 30, 0.8);
+        color: #fff;
+        font: 14px/1.4 system-ui, sans-serif;
+      }
+    </style>
+    <script src="https://unpkg.com/hydra-synth@1.3.29/dist/hydra-synth.js"></script>
+  </head>
+  <body>
+    <div id="status">Loading __SKETCH_TITLE__…</div>
+    <canvas id="hydra-canvas"></canvas>
+    <script>
+      const status = document.getElementById('status');
+      const canvas = document.getElementById('hydra-canvas');
+      const sketchUrl = __SKETCH_URL__;
+      let hydra;
+
+      function showError(message) {
+        if (status) {
+          status.textContent = message;
+          status.style.background = 'rgba(125, 22, 52, 0.88)';
+        }
+      }
+
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        if (hydra && typeof hydra.setResolution === 'function') {
+          hydra.setResolution(window.innerWidth, window.innerHeight);
+        }
+      }
+
+      window.addEventListener('error', (event) => {
+        showError(`Runtime error: ${event.message}`);
+      });
+
+      try {
+        resize();
+        hydra = new window.Hydra({
+          canvas,
+          detectAudio: false,
+          enableStreamCapture: false,
+          makeGlobal: true,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+
+        const script = document.createElement('script');
+        script.src = sketchUrl;
+        script.onload = () => status && status.remove();
+        script.onerror = () => showError('Failed to load Hydra sketch.');
+        document.body.appendChild(script);
+        window.addEventListener('resize', resize);
+      } catch (error) {
+        const message = error instanceof Error ? error.message : 'Unknown Hydra runtime error.';
+        showError(message);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HermesVJ p5 runtime</title>
+    <style>
+      html, body, #app {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #000;
+      }
+      #status {
+        position: fixed;
+        inset: 16px auto auto 16px;
+        z-index: 10;
+        padding: 10px 12px;
+        border-radius: 10px;
+        background: rgba(13, 17, 30, 0.8);
+        color: #fff;
+        font: 14px/1.4 system-ui, sans-serif;
+      }
+      canvas {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="status">Loading __SKETCH_TITLE__…</div>
+    <div id="app"></div>
+    <script type="module">
+      const status = document.getElementById('status');
+      const mount = document.getElementById('app');
+      const sketchUrl = __SKETCH_URL__;
+
+      function showError(message) {
+        if (status) {
+          status.textContent = message;
+          status.style.background = 'rgba(125, 22, 52, 0.88)';
+        }
+      }
+
+      window.addEventListener('error', (event) => {
+        showError(`Runtime error: ${event.message}`);
+      });
+
+      try {
+        const [{ default: P5 }, module] = await Promise.all([
+          import('https://cdn.jsdelivr.net/npm/p5@1.11.10/+esm'),
+          import(sketchUrl),
+        ]);
+        const sketch = module.default;
+        if (typeof sketch !== 'function') {
+          throw new Error('p5 sketch must export a default function.');
+        }
+        if (status) {
+          status.remove();
+        }
+        new P5(sketch, mount);
+      } catch (error) {
+        const message = error instanceof Error ? error.message : 'Unknown p5 runtime error.';
+        showError(message);
+      }
+    </script>
+  </body>
+</html>
