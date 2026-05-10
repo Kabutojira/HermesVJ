@@ -1,0 +1,78 @@
+speed = 2.1
+
+solid(0.001, 0.002, 0.01)
+  .add(
+    noise(5, 0.05)
+      .color(0.05, 0.08, 0.18)
+      .brightness(-0.55)
+      .contrast(1.35)
+      .rotate(0, 0.02)
+  )
+  .add(
+    osc(126 / 60, 0.03, 1.2)
+      .kaleid(2)
+      .rotate(0, 0.03)
+      .modulateRotate(noise(2.2, 0.12), 0.22)
+      .color(0.22, 0.45, 1.25)
+      .brightness(-0.2)
+      .contrast(1.3)
+      .mask(
+        shape(80, 0.55, 0.02)
+          .scale(() => 0.88 + 0.02 * Math.sin(time * 2.1))
+          .thresh(0.45, 0.08)
+      )
+  )
+  .add(
+    voronoi(9, 0.18, 0.55)
+      .brightness(-0.82)
+      .color(0.9, 0.35, 1.4)
+      .modulate(noise(3, 0.18), 0.08)
+      .rotate(0, -0.015)
+      .mask(
+        gradient(1)
+          .color(1, 1, 1)
+          .brightness(-0.15)
+          .invert()
+          .thresh(0.42, 0.06)
+      )
+  )
+  .add(
+    osc(3, 0.02, 0.8)
+      .rotate(1.57)
+      .modulate(noise(1.5, 0.06), 0.18)
+      .color(0.95, 0.45, 0.18)
+      .brightness(-0.82)
+      .mask(
+        shape(72, 0.24, 0.12)
+          .scale(() => 0.18 + 0.015 * Math.sin(time * 2.1))
+          .invert()
+      )
+  )
+  .layer(
+    src(o0)
+      .scale(1.012)
+      .rotate(0, 0.002)
+      .modulateRotate(osc(0.08, 0.01, 0), 0.03)
+      .brightness(-0.012)
+      .saturate(1.015)
+      .mask(
+        shape(90, 0.97, 0.001)
+          .invert()
+          .scale(1.02)
+      )
+  )
+  .add(
+    noise(40, 0.4)
+      .thresh(0.78, 0.02)
+      .color(1.2, 1.15, 1)
+      .brightness(-0.1)
+      .mult(
+        osc(0.07, 0.01, 0)
+          .brightness(0.85)
+      )
+  )
+  .saturate(1.35)
+  .contrast(1.22)
+  .out(o0)
+
+render(o0)
