@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "latest": "2026-05-10-135815-cyberpunk-neon-district",
+  "latest": "2026-05-10-140259-steampunk-aether-engine",
   "sketches": [
     {
       "id": "2026-05-10-120000-neon-orbits",
@@ -46,6 +46,15 @@
       "metadata": "sketches/2026-05-10-135815-cyberpunk-neon-district/sketch.json",
       "created_at": "2026-05-10T13:58:15Z",
       "prompt": "cyberpunk midnight district with magenta-cyan neon towers, holographic mist, reflective rain streets, drifting hover traffic, and cinematic pulse lighting"
+    },
+    {
+      "id": "2026-05-10-140259-steampunk-aether-engine",
+      "title": "Steampunk Aether Engine",
+      "engine": "p5",
+      "path": "sketches/2026-05-10-140259-steampunk-aether-engine/sketch.js",
+      "metadata": "sketches/2026-05-10-140259-steampunk-aether-engine/sketch.json",
+      "created_at": "2026-05-10T14:02:59Z",
+      "prompt": "steampunk cathedral engine with brass gears, amber steam, suspended clockwork rings, glowing furnaces, and elegant aether pulse motion"
     }
   ]
 }
