@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "latest": "2026-05-10-120000-neon-orbits",
+  "latest": "2026-05-10-110505-autumn-rain-lanterns",
   "sketches": [
     {
       "id": "2026-05-10-120000-neon-orbits",
@@ -10,6 +10,15 @@
       "metadata": "sketches/2026-05-10-120000-neon-orbits/sketch.json",
       "created_at": "2026-05-10T12:00:00Z",
       "prompt": "slow neon orbital visuals for a dark room"
+    },
+    {
+      "id": "2026-05-10-110505-autumn-rain-lanterns",
+      "title": "Autumn Rain Lanterns",
+      "engine": "p5",
+      "path": "sketches/2026-05-10-110505-autumn-rain-lanterns/sketch.js",
+      "metadata": "sketches/2026-05-10-110505-autumn-rain-lanterns/sketch.json",
+      "created_at": "2026-05-10T11:05:05Z",
+      "prompt": "rainy autumn twilight with lantern reflections, drifting leaves, and a calm amber glow"
     }
   ]
 }
