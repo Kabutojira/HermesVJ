@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "latest": "2026-05-10-170017-luminous-octopus-garden",
+  "latest": "2026-06-12-220049-phantom-subtitle-tide",
   "sketches": [
     {
       "id": "2026-05-10-120000-neon-orbits",
@@ -82,6 +82,15 @@
       "metadata": "sketches/2026-05-10-170017-luminous-octopus-garden/sketch.json",
       "created_at": "2026-05-10T17:00:17Z",
       "prompt": "bioluminescent octopus drifting through a fantasy reef garden with curling tentacles, cyan-violet glow, pearl bubbles, and soft ocean pulse motion"
+    },
+    {
+      "id": "2026-06-12-220049-phantom-subtitle-tide",
+      "title": "Phantom Subtitle Tide",
+      "engine": "p5",
+      "path": "sketches/2026-06-12-220049-phantom-subtitle-tide/sketch.js",
+      "metadata": "sketches/2026-06-12-220049-phantom-subtitle-tide/sketch.json",
+      "created_at": "2026-06-12T22:00:49Z",
+      "prompt": "cinematic after-credits ocean of ghost subtitles with projector beams, dissolving silver glyphs, deep indigo haze, and a lingering to-be-continued pulse"
     }
   ]
 }
