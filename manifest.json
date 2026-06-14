@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "latest": "2026-06-14-105245-abyssal-wormhole-crown",
+  "latest": "2026-06-14-113956-auric-wormhole-spire",
   "sketches": [
     {
       "id": "2026-05-10-120000-neon-orbits",
@@ -127,6 +127,15 @@
       "metadata": "sketches/2026-06-14-105245-abyssal-wormhole-crown/sketch.json",
       "created_at": "2026-06-14T10:52:45Z",
       "prompt": "cinematic off-axis wormhole crowned by torn obsidian rings, deep indigo-violet void, restrained cyan highlights with ember-gold sparks, strong foreground-to-background depth, a diagonal inflow lane, dark negative space, and a bright event-throat kept under one quarter of the frame"
+    },
+    {
+      "id": "2026-06-14-113956-auric-wormhole-spire",
+      "title": "Auric Wormhole Spire",
+      "engine": "p5",
+      "path": "sketches/2026-06-14-113956-auric-wormhole-spire/sketch.js",
+      "metadata": "sketches/2026-06-14-113956-auric-wormhole-spire/sketch.json",
+      "created_at": "2026-06-14T11:39:56Z",
+      "prompt": "cinematic golden sci-fi wormhole with an off-axis auric portal crowned by dark spires, graphite-violet void, restrained teal highlights, a diagonal inflow lane, strong foreground-to-background depth, disciplined negative space, and a bright event throat kept under one quarter of the frame"
     }
   ]
 }
