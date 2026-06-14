@@ -27,16 +27,19 @@ Read and follow these repo-local skills in order:
 User request: create visual: ${PROMPT}
 
 Do the full job end-to-end in this repository:
-- inspect current visuals
+- inspect current visuals and at least one recent preview or sketch
+- derive a stronger internal art brief than the raw prompt
 - generate a better-looking new visual
 - lint it
+- if available, run node scripts/capture_visual_preview.mjs <id> before publishing and allow one refinement pass if the preview is still generic or muddy
 - publish it
 - push it
+- return the new visual id, title, and the one-command operator command for future runs
 
 Do not ask follow-up questions unless a hard blocker prevents publishing.
 EOF
 
 exec "$HERMES_BIN" chat \
   -Q \
-  -t terminal,file,skills,vision,todo,session_search \
+  -t terminal,file,skills,vision,browser,todo,session_search \
   -q "$QUERY"

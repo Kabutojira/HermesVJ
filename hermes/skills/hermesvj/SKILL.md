@@ -198,13 +198,21 @@ Treat them as a floor, not the ceiling.
 python3 scripts/lint_visual.py <id>
 ```
 
-6. publish it:
+6. if the repo has preview capture support, do one real preview pass before publish:
+
+```bash
+node scripts/capture_visual_preview.mjs <id>
+```
+
+Allow one refinement pass if the preview still reads as centered, muddy, low-contrast, or generic.
+
+7. publish it:
 
 ```bash
 python3 scripts/publish_visual.py <id>
 ```
 
-7. stop
+8. stop
 
 That publish script is responsible for:
 - updating `manifest.json`
@@ -255,4 +263,5 @@ Keep these actions narrow. Do not rewrite old sketch files.
 - [ ] New sketch directory exists under `sketches/`
 - [ ] `sketch.js` and `sketch.json` were written
 - [ ] `python3 scripts/lint_visual.py <id>` passed
+- [ ] `node scripts/capture_visual_preview.mjs <id>` was run when available
 - [ ] `python3 scripts/publish_visual.py <id>` succeeded

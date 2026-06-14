@@ -16,6 +16,12 @@ metadata:
 
 This skill is the repo-local fast path for improving HermesVJ graphics without re-explaining the workflow every time.
 
+Current quality findings from actual repo visuals:
+- some p5 scenes are attractive but over-rely on a centered orb / halo stack
+- some scenes spread small particles across the whole frame, which weakens hierarchy
+- some Hydra/event results can collapse into sparse abstract noise if the composition brief is too loose
+- the difference between "nice" and "stunning" here is mostly art direction and preview discipline, not more effect layers
+
 Its job is simple:
 1. inspect the current visual style
 2. create a better-looking new visual
@@ -70,6 +76,14 @@ python3 scripts/publish_visual.py <id>
 
 7. If asked to show the result, render or capture the new visual.
 
+If the repo has `scripts/capture_visual_preview.mjs`, use it before publishing as the cheap reality check:
+
+```bash
+node scripts/capture_visual_preview.mjs <id>
+```
+
+Do one preview pass and allow exactly one art-direction refinement if the result is still centered, muddy, low-contrast, or compositionally generic.
+
 ## Art Brief Standard
 
 Before generating, lock these decisions:
@@ -82,10 +96,24 @@ Before generating, lock these decisions:
 - highlight zone
 - whether aspect variants are worth it
 
+Do not proceed without an explicit answer for all of these. Weak briefs produce weak visuals.
+
+Strong defaults:
+- push the hero off dead center unless symmetry is the point
+- use one dominant hue family plus one accent, not three competing families
+- keep the brightest region under roughly one quarter of the frame
+- prefer one large memorable structure over many equal-strength motifs
+
 ## One-Command Repo Flow
 
 The helper script `scripts/create_visual.sh` is the intended operator interface.
 It should be preferred over retyping a long Hermes prompt manually.
+
+Canonical operator command from the repo root:
+
+```bash
+./scripts/create_visual.sh "your prompt here"
+```
 
 ## Common Pitfalls
 
@@ -98,10 +126,17 @@ It should be preferred over retyping a long Hermes prompt manually.
 3. **Treating the helper script as optional ceremony.**
    The script is the point: one simple command from repo root.
 
+4. **Mistaking more particles or bloom for better art.**
+   More visual noise usually makes the result cheaper, not richer.
+
+5. **Skipping a real preview.**
+   A valid sketch can still fail visually; capture one frame before publish when the preview script exists.
+
 ## Verification Checklist
 
 - [ ] Current visuals were inspected first
 - [ ] The new art brief is more specific than the raw prompt
+- [ ] The visual was previewed once before publish when preview tooling was available
 - [ ] The visual was linted
 - [ ] The visual was published and pushed
 - [ ] The user got the repo-local command for future runs
