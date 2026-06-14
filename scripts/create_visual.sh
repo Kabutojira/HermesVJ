@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [ "$#" -lt 1 ]; then
+  echo "usage: ./scripts/create_visual.sh \"your visual prompt\"" >&2
+  exit 1
+fi
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+PROMPT="$*"
+
+if command -v hermes >/dev/null 2>&1; then
+  HERMES_BIN="$(command -v hermes)"
+elif [ -x /opt/data/home/venvs/hermes-cli/bin/hermes ]; then
+  HERMES_BIN="/opt/data/home/venvs/hermes-cli/bin/hermes"
+else
+  echo "create_visual: hermes CLI not found in PATH and fallback binary missing" >&2
+  exit 1
+fi
+
+read -r -d '' QUERY <<EOF || true
+You are working inside the HermesVJ repository at ${REPO_ROOT}.
+Read and follow these repo-local skills in order:
+1. ${REPO_ROOT}/hermes/skills/update-graphics/SKILL.md
+2. ${REPO_ROOT}/hermes/skills/hermesvj/SKILL.md
+
+User request: create visual: ${PROMPT}
+
+Do the full job end-to-end in this repository:
+- inspect current visuals
+- generate a better-looking new visual
+- lint it
+- publish it
+- push it
+
+Do not ask follow-up questions unless a hard blocker prevents publishing.
+EOF
+
+exec "$HERMES_BIN" chat \
+  -Q \
+  -t terminal,file,skills,vision,todo,session_search \
+  -q "$QUERY"

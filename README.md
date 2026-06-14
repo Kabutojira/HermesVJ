@@ -217,6 +217,16 @@ The skill is designed to do the entire job without further interaction:
 hermes -s hermesvj chat -q "create visual: emerald cathedral of light with playful forest spirits"
 ```
 
+### One-command repo flow
+
+From the repo root:
+
+```bash
+./scripts/create_visual.sh "emerald cathedral of light with playful forest spirits"
+```
+
+That wrapper tells Hermes to use the repo-local `update-graphics` + `hermesvj` skills, inspect current visuals, create a stronger new graphic, lint it, publish it, and push it.
+
 ### Without a prompt
 
 ```bash
