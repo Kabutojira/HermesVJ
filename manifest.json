@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "latest": "2026-06-14-113956-auric-wormhole-spire",
+  "latest": "2026-06-14-150021-lavender-wind-reverie",
   "sketches": [
     {
       "id": "2026-05-10-120000-neon-orbits",
@@ -136,6 +136,15 @@
       "metadata": "sketches/2026-06-14-113956-auric-wormhole-spire/sketch.json",
       "created_at": "2026-06-14T11:39:56Z",
       "prompt": "cinematic golden sci-fi wormhole with an off-axis auric portal crowned by dark spires, graphite-violet void, restrained teal highlights, a diagonal inflow lane, strong foreground-to-background depth, disciplined negative space, and a bright event throat kept under one quarter of the frame"
+    },
+    {
+      "id": "2026-06-14-150021-lavender-wind-reverie",
+      "title": "Lavender Wind Reverie",
+      "engine": "p5",
+      "path": "sketches/2026-06-14-150021-lavender-wind-reverie/sketch.js",
+      "metadata": "sketches/2026-06-14-150021-lavender-wind-reverie/sketch.json",
+      "created_at": "2026-06-14T15:00:21Z",
+      "prompt": "cinematic lavender flower in the wind with an off-axis wind-bent bloom spire, twilight indigo-violet atmosphere, restrained mint-silver moonlit accents, layered depth from blurred field stems to a crisp hero blossom, soft petal drift, diagonal gust ribbons, disciplined negative space, and a compact highlight zone"
     }
   ]
 }
